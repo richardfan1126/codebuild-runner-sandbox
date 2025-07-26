@@ -18,8 +18,7 @@ resource "aws_ssm_parameter" "github_pat" {
 }
 
 module "github-runners" {
-  source  = "cloudandthings/github-runners/aws"
-  version = "3.0.1"
+  source = "git::https://github.com/cloudandthings/terraform-aws-github-runners.git?ref=c70307f7be168c7c54554f34b4652ad84ffe0317"
 
   depends_on = [
     aws_ssm_parameter.github_pat
