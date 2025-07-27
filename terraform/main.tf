@@ -28,4 +28,8 @@ module "github-runners" {
   source_location = local.github_full_url
 
   github_personal_access_token_ssm_parameter = aws_ssm_parameter.github_pat.name
+
+  vpc_id             = var.vpc_id
+  subnet_ids         = var.subnet_ids
+  security_group_ids = var.security_group_ids
 }

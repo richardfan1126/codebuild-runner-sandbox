@@ -9,3 +9,21 @@ variable "repository_name" {
   type        = string
   description = "GitHub repository name (e.g. octo-org/octo-template)"
 }
+
+variable "vpc_id" {
+  type        = string
+  description = "VPC ID for CodeBuild runner"
+  default     = null
+}
+
+variable "subnet_ids" {
+  type        = list(string)
+  description = "List of subnet IDs for CodeBuild runner"
+  default     = []
+}
+
+variable "security_group_ids" {
+  type        = list(string)
+  description = "List of security group IDs for CodeBuild runner"
+  default     = []
+}
